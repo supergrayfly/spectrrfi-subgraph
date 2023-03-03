@@ -1,0 +1,75 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: SpectrrFi
+    network: fantom-testnet
+    source:
+      address: "0x31906d7be658cf29835b37cf09d996fd5bfe0fd1"
+      startBlock: 14284993
+      abi: SpectrrFi
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BuyOfferAccepted
+        - BuyOfferBuyerAddressChanged
+        - BuyOfferCanceled
+        - BuyOfferCollateralAdded
+        - BuyOfferCreated
+        - BuyOfferForfeited
+        - BuyOfferLiquidated
+        - BuyOfferRepaid
+        - BuyOfferSellerAddressChanged
+        - SaleOfferAccepted
+        - SaleOfferBuyerAddressChanged
+        - SaleOfferCanceled
+        - SaleOfferCollateralAdded
+        - SaleOfferCreated
+        - SaleOfferForfeited
+        - SaleOfferLiquidated
+        - SaleOfferRepaid
+        - SaleOfferSellerAddressChanged
+      abis:
+        - name: SpectrrFi
+          file: SpectrrFi/abis/SpectrrFi.json
+      eventHandlers:
+        - event: BuyOfferAccepted(uint256,address,uint256)
+          handler: handleBuyOfferAccepted
+        - event: BuyOfferBuyerAddressChanged(uint256,address)
+          handler: handleBuyOfferBuyerAddressChanged
+        - event: BuyOfferCanceled(uint256,uint256)
+          handler: handleBuyOfferCanceled
+        - event: BuyOfferCollateralAdded(uint256,uint256,uint8,uint256)
+          handler: handleBuyOfferCollateralAdded
+        - event: BuyOfferCreated(uint256,uint256,uint8,uint256,uint8,uint256,uint8,uint256,address,uint256)
+          handler: handleBuyOfferCreated
+        - event: BuyOfferForfeited(uint256,uint256)
+          handler: handleBuyOfferForfeited
+        - event: BuyOfferLiquidated(uint256,address,uint256)
+          handler: handleBuyOfferLiquidated
+        - event: BuyOfferRepaid(uint256,uint256,uint8,bool,uint256)
+          handler: handleBuyOfferRepaid
+        - event: BuyOfferSellerAddressChanged(uint256,address)
+          handler: handleBuyOfferSellerAddressChanged
+        - event: SaleOfferAccepted(uint256,uint256,uint8,address,uint256)
+          handler: handleSaleOfferAccepted
+        - event: SaleOfferBuyerAddressChanged(uint256,address)
+          handler: handleSaleOfferBuyerAddressChanged
+        - event: SaleOfferCanceled(uint256,uint256)
+          handler: handleSaleOfferCanceled
+        - event: SaleOfferCollateralAdded(uint256,uint256,uint256,uint256)
+          handler: handleSaleOfferCollateralAdded
+        - event: SaleOfferCreated(uint256,uint256,uint8,uint256,uint8,uint256,uint256,address,uint256)
+          handler: handleSaleOfferCreated
+        - event: SaleOfferForfeited(uint256,uint256)
+          handler: handleSaleOfferForfeited
+        - event: SaleOfferLiquidated(uint256,address,uint256)
+          handler: handleSaleOfferLiquidated
+        - event: SaleOfferRepaid(uint256,uint256,uint8,bool,uint256)
+          handler: handleSaleOfferRepaid
+        - event: SaleOfferSellerAddressChanged(uint256,address)
+          handler: handleSaleOfferSellerAddressChanged
+      file: SpectrrFi/SpectrrFi.wasm

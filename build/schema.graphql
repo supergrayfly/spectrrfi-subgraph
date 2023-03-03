@@ -1,0 +1,35 @@
+type SaleOffer @entity {
+  id: String!
+  selling: BigInt
+  sellFor: BigInt
+  collateral: BigInt
+  repayInSec: BigInt
+  timeAccepted: BigInt
+  timeCreated: BigInt
+  exchangeRate: BigInt
+  sellingId: Int
+  sellForId: Int
+  collateralId: Int
+  seller: Bytes
+  buyer: Bytes
+  status: Int
+  ratio: BigInt
+}
+
+type BuyOffer @entity {
+  id: String!
+  buying: BigInt
+  buyFor: BigInt
+  collateral: BigInt
+  repayInSec: BigInt
+  timeAccepted: BigInt
+  timeCreated: BigInt
+  exchangeRate: BigInt
+  buyingId: Int
+  buyForId: Int
+  collateralId: Int
+  buyer: Bytes
+  seller: Bytes
+  status: Int
+  ratio: BigInt
+} 
