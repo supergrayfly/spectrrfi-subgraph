@@ -1,4 +1,4 @@
-import { BigInt } from "@graphprotocol/graph-ts"
+import { BigInt } from "@graphprotocol/graph-ts";
 import {
   SpectrrFi,
   BuyOfferAccepted,
@@ -18,8 +18,8 @@ import {
   SaleOfferForfeited,
   SaleOfferLiquidated,
   SaleOfferRepaid,
-  SaleOfferSellerAddressChanged
-} from "../generated/SpectrrFi/SpectrrFi"
+  SaleOfferSellerAddressChanged,
+} from "../generated/SpectrrFi/SpectrrFi";
 import { SaleOffer, BuyOffer } from "../generated/schema";
 
 // Offer status codes
@@ -27,30 +27,34 @@ const open = 0;
 const accepted = 1;
 const closed = 2;
 
-export function handleBuyOfferSellerAddressChanged(event: BuyOfferSellerAddressChanged) : void {
-	let id = event.params.offerId.toString()
-	let offer = BuyOffer.load(id)
+export function handleBuyOfferSellerAddressChanged(
+  event: BuyOfferSellerAddressChanged
+): void {
+  let id = event.params.offerId.toString();
+  let offer = BuyOffer.load(id);
 
-	if (offer == null) {
-		offer = new BuyOffer(id)
-	}
+  if (offer == null) {
+    offer = new BuyOffer(id);
+  }
 
-	offer.seller = event.params.newAddress
+  offer.seller = event.params.newAddress;
 
-	offer.save()
+  offer.save();
 }
 
-export function handleBuyOfferBuyerAddressChanged(event: BuyOfferBuyerAddressChanged) : void {
-	let id = event.params.offerId.toString()
-	let offer = BuyOffer.load(id)
+export function handleBuyOfferBuyerAddressChanged(
+  event: BuyOfferBuyerAddressChanged
+): void {
+  let id = event.params.offerId.toString();
+  let offer = BuyOffer.load(id);
 
-	if (offer == null) {
-		offer = new BuyOffer(id)
-	}
+  if (offer == null) {
+    offer = new BuyOffer(id);
+  }
 
-	offer.buyer = event.params.newAddress
-	
-	offer.save()
+  offer.buyer = event.params.newAddress;
+
+  offer.save();
 }
 
 export function handleBuyOfferAccepted(event: BuyOfferAccepted): void {
@@ -161,30 +165,34 @@ export function handleBuyOfferRepaid(event: BuyOfferRepaid): void {
   offer.save();
 }
 
-export function handleSaleOfferSellerAddressChanged(event: SaleOfferSellerAddressChanged) : void {
-	let id = event.params.offerId.toString()
-	let offer = SaleOffer.load(id)
+export function handleSaleOfferSellerAddressChanged(
+  event: SaleOfferSellerAddressChanged
+): void {
+  let id = event.params.offerId.toString();
+  let offer = SaleOffer.load(id);
 
-	if (offer == null) {
-		offer = new SaleOffer(id)
-	}
+  if (offer == null) {
+    offer = new SaleOffer(id);
+  }
 
-	offer.seller = event.params.newAddress
+  offer.seller = event.params.newAddress;
 
-	offer.save()
+  offer.save();
 }
 
-export function handleSaleOfferBuyerAddressChanged(event: SaleOfferBuyerAddressChanged) : void {
-	let id = event.params.offerId.toString()
-	let offer = SaleOffer.load(id)
+export function handleSaleOfferBuyerAddressChanged(
+  event: SaleOfferBuyerAddressChanged
+): void {
+  let id = event.params.offerId.toString();
+  let offer = SaleOffer.load(id);
 
-	if (offer == null) {
-		offer = new SaleOffer(id)
-	}
+  if (offer == null) {
+    offer = new SaleOffer(id);
+  }
 
-	offer.buyer = event.params.newAddress
-	
-	offer.save()
+  offer.buyer = event.params.newAddress;
+
+  offer.save();
 }
 
 export function handleSaleOfferAccepted(event: SaleOfferAccepted): void {
