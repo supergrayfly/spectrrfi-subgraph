@@ -6,9 +6,9 @@ dataSources:
     name: SpectrrFi
     network: fantom-testnet
     source:
+      abi: SpectrrFi
       address: "0x31906d7be658cf29835b37cf09d996fd5bfe0fd1"
       startBlock: 14284993
-      abi: SpectrrFi
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

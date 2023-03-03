@@ -1,7 +1,14 @@
 {
   "fantom-testnet": {
     "SpectrrFi": {
-      "address": "0x31906d7be658cf29835b37cf09d996fd5bfe0fd1"
+      "address": "0x31906d7be658cf29835b37cf09d996fd5bfe0fd1",
+			"startBlock": 14284993
     }
-  }
+  },
+	"fantom": {
+		"SpectrrFi": {
+			"address": "0x79d3a4d74ed03e2ae443ad5a79b0e0e1c214182c",
+			"startBlock": 56863385
+		}
+	}
 }

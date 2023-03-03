@@ -4,7 +4,8 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ supergrayfly/spectrrfi",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ supergrayfly/spectrrfi --network fantom",
+    "deployTest": "graph deploy --node https://api.thegraph.com/deploy/ supergrayfly/spectrrfi-testnet --network fantom-testnet",
     "create-local": "graph create --node http://localhost:8020/ supergrayfly/spectrrfi",
     "remove-local": "graph remove --node http://localhost:8020/ supergrayfly/spectrrfi",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 supergrayfly/spectrrfi",
