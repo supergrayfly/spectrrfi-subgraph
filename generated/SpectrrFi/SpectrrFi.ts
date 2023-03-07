@@ -74,10 +74,6 @@ export class BuyOfferCanceled__Params {
   get offerId(): BigInt {
     return this._event.parameters[0].value.toBigInt();
   }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[1].value.toBigInt();
-  }
 }
 
 export class BuyOfferCollateralAdded extends ethereum.Event {
@@ -99,14 +95,6 @@ export class BuyOfferCollateralAdded__Params {
 
   get amount(): BigInt {
     return this._event.parameters[1].value.toBigInt();
-  }
-
-  get amountId(): i32 {
-    return this._event.parameters[2].value.toI32();
-  }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[3].value.toBigInt();
   }
 }
 
@@ -180,10 +168,6 @@ export class BuyOfferForfeited__Params {
   get offerId(): BigInt {
     return this._event.parameters[0].value.toBigInt();
   }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[1].value.toBigInt();
-  }
 }
 
 export class BuyOfferLiquidated extends ethereum.Event {
@@ -205,10 +189,6 @@ export class BuyOfferLiquidated__Params {
 
   get liquidator(): Address {
     return this._event.parameters[1].value.toAddress();
-  }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[2].value.toBigInt();
   }
 }
 
@@ -239,10 +219,6 @@ export class BuyOfferRepaid__Params {
 
   get byPart(): boolean {
     return this._event.parameters[3].value.toBoolean();
-  }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[4].value.toBigInt();
   }
 }
 
@@ -410,10 +386,6 @@ export class SaleOfferCanceled__Params {
   get offerId(): BigInt {
     return this._event.parameters[0].value.toBigInt();
   }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[1].value.toBigInt();
-  }
 }
 
 export class SaleOfferCollateralAdded extends ethereum.Event {
@@ -435,14 +407,6 @@ export class SaleOfferCollateralAdded__Params {
 
   get amount(): BigInt {
     return this._event.parameters[1].value.toBigInt();
-  }
-
-  get amountId(): BigInt {
-    return this._event.parameters[2].value.toBigInt();
-  }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[3].value.toBigInt();
   }
 }
 
@@ -512,10 +476,6 @@ export class SaleOfferForfeited__Params {
   get offerId(): BigInt {
     return this._event.parameters[0].value.toBigInt();
   }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[1].value.toBigInt();
-  }
 }
 
 export class SaleOfferLiquidated extends ethereum.Event {
@@ -537,10 +497,6 @@ export class SaleOfferLiquidated__Params {
 
   get liquidator(): Address {
     return this._event.parameters[1].value.toAddress();
-  }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[2].value.toBigInt();
   }
 }
 
@@ -571,10 +527,6 @@ export class SaleOfferRepaid__Params {
 
   get byPart(): boolean {
     return this._event.parameters[3].value.toBoolean();
-  }
-
-  get timestamp(): BigInt {
-    return this._event.parameters[4].value.toBigInt();
   }
 }
 
@@ -731,64 +683,6 @@ export class SpectrrFi__buyOffersResult {
   }
 }
 
-export class SpectrrFi__getRatioInfoResult {
-  value0: BigInt;
-  value1: BigInt;
-  value2: i32;
-  value3: i32;
-  value4: Address;
-
-  constructor(
-    value0: BigInt,
-    value1: BigInt,
-    value2: i32,
-    value3: i32,
-    value4: Address
-  ) {
-    this.value0 = value0;
-    this.value1 = value1;
-    this.value2 = value2;
-    this.value3 = value3;
-    this.value4 = value4;
-  }
-
-  toMap(): TypedMap<string, ethereum.Value> {
-    let map = new TypedMap<string, ethereum.Value>();
-    map.set("value0", ethereum.Value.fromUnsignedBigInt(this.value0));
-    map.set("value1", ethereum.Value.fromUnsignedBigInt(this.value1));
-    map.set(
-      "value2",
-      ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(this.value2))
-    );
-    map.set(
-      "value3",
-      ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(this.value3))
-    );
-    map.set("value4", ethereum.Value.fromAddress(this.value4));
-    return map;
-  }
-
-  getValue0(): BigInt {
-    return this.value0;
-  }
-
-  getValue1(): BigInt {
-    return this.value1;
-  }
-
-  getValue2(): i32 {
-    return this.value2;
-  }
-
-  getValue3(): i32 {
-    return this.value3;
-  }
-
-  getValue4(): Address {
-    return this.value4;
-  }
-}
-
 export class SpectrrFi__saleOffersResult {
   value0: i32;
   value1: i32;
@@ -921,18 +815,18 @@ export class SpectrrFi__saleOffersResult {
 }
 
 export class SpectrrFi__tokensResult {
-  value0: i32;
+  value0: string;
   value1: i32;
-  value2: string;
-  value3: Address;
+  value2: i32;
+  value3: i32;
   value4: Address;
   value5: Address;
 
   constructor(
-    value0: i32,
+    value0: string,
     value1: i32,
-    value2: string,
-    value3: Address,
+    value2: i32,
+    value3: i32,
     value4: Address,
     value5: Address
   ) {
@@ -946,34 +840,37 @@ export class SpectrrFi__tokensResult {
 
   toMap(): TypedMap<string, ethereum.Value> {
     let map = new TypedMap<string, ethereum.Value>();
-    map.set(
-      "value0",
-      ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(this.value0))
-    );
+    map.set("value0", ethereum.Value.fromString(this.value0));
     map.set(
       "value1",
       ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(this.value1))
     );
-    map.set("value2", ethereum.Value.fromString(this.value2));
-    map.set("value3", ethereum.Value.fromAddress(this.value3));
+    map.set(
+      "value2",
+      ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(this.value2))
+    );
+    map.set(
+      "value3",
+      ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(this.value3))
+    );
     map.set("value4", ethereum.Value.fromAddress(this.value4));
     map.set("value5", ethereum.Value.fromAddress(this.value5));
     return map;
   }
 
-  getTokenId(): i32 {
+  getName(): string {
     return this.value0;
   }
 
-  getDecimals(): i32 {
+  getId(): i32 {
     return this.value1;
   }
 
-  getTokenName(): string {
+  getDecimals(): i32 {
     return this.value2;
   }
 
-  getTokenAddress(): Address {
+  getChainlinkPriceDecimals(): i32 {
     return this.value3;
   }
 
@@ -981,7 +878,7 @@ export class SpectrrFi__tokensResult {
     return this.value4;
   }
 
-  getItoken(): Address {
+  getAddr(): Address {
     return this.value5;
   }
 }
@@ -1075,6 +972,85 @@ export class SpectrrFi extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
+  WEI(): BigInt {
+    let result = super.call("WEI", "WEI():(uint256)", []);
+
+    return result[0].toBigInt();
+  }
+
+  try_WEI(): ethereum.CallResult<BigInt> {
+    let result = super.tryCall("WEI", "WEI():(uint256)", []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  amountFromWei(_amount: BigInt, _amountTokenId: i32): BigInt {
+    let result = super.call(
+      "amountFromWei",
+      "amountFromWei(uint256,uint8):(uint256)",
+      [
+        ethereum.Value.fromUnsignedBigInt(_amount),
+        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_amountTokenId))
+      ]
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_amountFromWei(
+    _amount: BigInt,
+    _amountTokenId: i32
+  ): ethereum.CallResult<BigInt> {
+    let result = super.tryCall(
+      "amountFromWei",
+      "amountFromWei(uint256,uint8):(uint256)",
+      [
+        ethereum.Value.fromUnsignedBigInt(_amount),
+        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_amountTokenId))
+      ]
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  amountToWei(_amount: BigInt, _amountTokenId: i32): BigInt {
+    let result = super.call(
+      "amountToWei",
+      "amountToWei(uint256,uint8):(uint256)",
+      [
+        ethereum.Value.fromUnsignedBigInt(_amount),
+        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_amountTokenId))
+      ]
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_amountToWei(
+    _amount: BigInt,
+    _amountTokenId: i32
+  ): ethereum.CallResult<BigInt> {
+    let result = super.tryCall(
+      "amountToWei",
+      "amountToWei(uint256,uint8):(uint256)",
+      [
+        ethereum.Value.fromUnsignedBigInt(_amount),
+        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_amountTokenId))
+      ]
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
   buyOffers(param0: BigInt): SpectrrFi__buyOffersResult {
     let result = super.call(
       "buyOffers",
@@ -1149,39 +1125,7 @@ export class SpectrrFi extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
-  canLiquidate(_offerId: BigInt, _offerType: i32): boolean {
-    let result = super.call(
-      "canLiquidate",
-      "canLiquidate(uint256,uint8):(bool)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
-    );
-
-    return result[0].toBoolean();
-  }
-
-  try_canLiquidate(
-    _offerId: BigInt,
-    _offerType: i32
-  ): ethereum.CallResult<boolean> {
-    let result = super.tryCall(
-      "canLiquidate",
-      "canLiquidate(uint256,uint8):(bool)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
-    );
-    if (result.reverted) {
-      return new ethereum.CallResult();
-    }
-    let value = result.value;
-    return ethereum.CallResult.fromValue(value[0].toBoolean());
-  }
-
-  canLiquidate1(
+  canLiquidate(
     _amountTokenWei: BigInt,
     _amountTokenId: i32,
     _collateralTokenAmountWei: BigInt,
@@ -1203,7 +1147,7 @@ export class SpectrrFi extends ethereum.SmartContract {
     return result[0].toBoolean();
   }
 
-  try_canLiquidate1(
+  try_canLiquidate(
     _amountTokenWei: BigInt,
     _amountTokenId: i32,
     _collateralTokenAmountWei: BigInt,
@@ -1264,9 +1208,9 @@ export class SpectrrFi extends ethereum.SmartContract {
   }
 
   createBuyOffer(
-    _buyingTokenAmountWei: BigInt,
+    _buyingTokenAmount: BigInt,
     _buyingTokenId: i32,
-    _exchangeRateWei: BigInt,
+    _exchangeRate: BigInt,
     _buyingForTokenId: i32,
     _collateralTokenId: i32,
     _repayInSeconds: BigInt
@@ -1275,9 +1219,9 @@ export class SpectrrFi extends ethereum.SmartContract {
       "createBuyOffer",
       "createBuyOffer(uint256,uint8,uint256,uint8,uint8,uint256):(uint256)",
       [
-        ethereum.Value.fromUnsignedBigInt(_buyingTokenAmountWei),
+        ethereum.Value.fromUnsignedBigInt(_buyingTokenAmount),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_buyingTokenId)),
-        ethereum.Value.fromUnsignedBigInt(_exchangeRateWei),
+        ethereum.Value.fromUnsignedBigInt(_exchangeRate),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_buyingForTokenId)),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_collateralTokenId)),
         ethereum.Value.fromUnsignedBigInt(_repayInSeconds)
@@ -1288,9 +1232,9 @@ export class SpectrrFi extends ethereum.SmartContract {
   }
 
   try_createBuyOffer(
-    _buyingTokenAmountWei: BigInt,
+    _buyingTokenAmount: BigInt,
     _buyingTokenId: i32,
-    _exchangeRateWei: BigInt,
+    _exchangeRate: BigInt,
     _buyingForTokenId: i32,
     _collateralTokenId: i32,
     _repayInSeconds: BigInt
@@ -1299,9 +1243,9 @@ export class SpectrrFi extends ethereum.SmartContract {
       "createBuyOffer",
       "createBuyOffer(uint256,uint8,uint256,uint8,uint8,uint256):(uint256)",
       [
-        ethereum.Value.fromUnsignedBigInt(_buyingTokenAmountWei),
+        ethereum.Value.fromUnsignedBigInt(_buyingTokenAmount),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_buyingTokenId)),
-        ethereum.Value.fromUnsignedBigInt(_exchangeRateWei),
+        ethereum.Value.fromUnsignedBigInt(_exchangeRate),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_buyingForTokenId)),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_collateralTokenId)),
         ethereum.Value.fromUnsignedBigInt(_repayInSeconds)
@@ -1315,9 +1259,9 @@ export class SpectrrFi extends ethereum.SmartContract {
   }
 
   createSaleOffer(
-    _sellingTokenAmountWei: BigInt,
+    _sellingTokenAmount: BigInt,
     _sellingTokenId: i32,
-    _exchangeRateWei: BigInt,
+    _exchangeRate: BigInt,
     _sellingForTokenId: i32,
     _repayInSeconds: BigInt
   ): BigInt {
@@ -1325,9 +1269,9 @@ export class SpectrrFi extends ethereum.SmartContract {
       "createSaleOffer",
       "createSaleOffer(uint256,uint8,uint256,uint8,uint256):(uint256)",
       [
-        ethereum.Value.fromUnsignedBigInt(_sellingTokenAmountWei),
+        ethereum.Value.fromUnsignedBigInt(_sellingTokenAmount),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_sellingTokenId)),
-        ethereum.Value.fromUnsignedBigInt(_exchangeRateWei),
+        ethereum.Value.fromUnsignedBigInt(_exchangeRate),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_sellingForTokenId)),
         ethereum.Value.fromUnsignedBigInt(_repayInSeconds)
       ]
@@ -1337,9 +1281,9 @@ export class SpectrrFi extends ethereum.SmartContract {
   }
 
   try_createSaleOffer(
-    _sellingTokenAmountWei: BigInt,
+    _sellingTokenAmount: BigInt,
     _sellingTokenId: i32,
-    _exchangeRateWei: BigInt,
+    _exchangeRate: BigInt,
     _sellingForTokenId: i32,
     _repayInSeconds: BigInt
   ): ethereum.CallResult<BigInt> {
@@ -1347,9 +1291,9 @@ export class SpectrrFi extends ethereum.SmartContract {
       "createSaleOffer",
       "createSaleOffer(uint256,uint8,uint256,uint8,uint256):(uint256)",
       [
-        ethereum.Value.fromUnsignedBigInt(_sellingTokenAmountWei),
+        ethereum.Value.fromUnsignedBigInt(_sellingTokenAmount),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_sellingTokenId)),
-        ethereum.Value.fromUnsignedBigInt(_exchangeRateWei),
+        ethereum.Value.fromUnsignedBigInt(_exchangeRate),
         ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_sellingForTokenId)),
         ethereum.Value.fromUnsignedBigInt(_repayInSeconds)
       ]
@@ -1533,71 +1477,7 @@ export class SpectrrFi extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
-  getLiquidationPriceAmountFor1(_offerId: BigInt, _offerType: i32): BigInt {
-    let result = super.call(
-      "getLiquidationPriceAmountFor",
-      "getLiquidationPriceAmountFor(uint256,uint8):(uint256)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
-    );
-
-    return result[0].toBigInt();
-  }
-
-  try_getLiquidationPriceAmountFor1(
-    _offerId: BigInt,
-    _offerType: i32
-  ): ethereum.CallResult<BigInt> {
-    let result = super.tryCall(
-      "getLiquidationPriceAmountFor",
-      "getLiquidationPriceAmountFor(uint256,uint8):(uint256)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
-    );
-    if (result.reverted) {
-      return new ethereum.CallResult();
-    }
-    let value = result.value;
-    return ethereum.CallResult.fromValue(value[0].toBigInt());
-  }
-
-  getLiquidationPriceCollateral(_offerId: BigInt, _offerType: i32): BigInt {
-    let result = super.call(
-      "getLiquidationPriceCollateral",
-      "getLiquidationPriceCollateral(uint256,uint8):(uint256)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
-    );
-
-    return result[0].toBigInt();
-  }
-
-  try_getLiquidationPriceCollateral(
-    _offerId: BigInt,
-    _offerType: i32
-  ): ethereum.CallResult<BigInt> {
-    let result = super.tryCall(
-      "getLiquidationPriceCollateral",
-      "getLiquidationPriceCollateral(uint256,uint8):(uint256)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
-    );
-    if (result.reverted) {
-      return new ethereum.CallResult();
-    }
-    let value = result.value;
-    return ethereum.CallResult.fromValue(value[0].toBigInt());
-  }
-
-  getLiquidationPriceCollateral1(
+  getLiquidationPriceCollateral(
     _collateralTokenAmountWei: BigInt,
     _amountForTokenWei: BigInt,
     _amountForTokenId: i32,
@@ -1617,7 +1497,7 @@ export class SpectrrFi extends ethereum.SmartContract {
     return result[0].toBigInt();
   }
 
-  try_getLiquidationPriceCollateral1(
+  try_getLiquidationPriceCollateral(
     _collateralTokenAmountWei: BigInt,
     _amountForTokenWei: BigInt,
     _amountForTokenId: i32,
@@ -1683,85 +1563,27 @@ export class SpectrrFi extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
-  getRatioInfo(
-    _offerId: BigInt,
-    _offerType: i32
-  ): SpectrrFi__getRatioInfoResult {
+  getTokenDecimalsFromId(_tokenId: i32): i32 {
     let result = super.call(
-      "getRatioInfo",
-      "getRatioInfo(uint256,uint8):(uint256,uint256,uint8,uint8,address)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
+      "getTokenDecimalsFromId",
+      "getTokenDecimalsFromId(uint8):(uint8)",
+      [ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_tokenId))]
     );
 
-    return new SpectrrFi__getRatioInfoResult(
-      result[0].toBigInt(),
-      result[1].toBigInt(),
-      result[2].toI32(),
-      result[3].toI32(),
-      result[4].toAddress()
-    );
+    return result[0].toI32();
   }
 
-  try_getRatioInfo(
-    _offerId: BigInt,
-    _offerType: i32
-  ): ethereum.CallResult<SpectrrFi__getRatioInfoResult> {
+  try_getTokenDecimalsFromId(_tokenId: i32): ethereum.CallResult<i32> {
     let result = super.tryCall(
-      "getRatioInfo",
-      "getRatioInfo(uint256,uint8):(uint256,uint256,uint8,uint8,address)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
+      "getTokenDecimalsFromId",
+      "getTokenDecimalsFromId(uint8):(uint8)",
+      [ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_tokenId))]
     );
     if (result.reverted) {
       return new ethereum.CallResult();
     }
     let value = result.value;
-    return ethereum.CallResult.fromValue(
-      new SpectrrFi__getRatioInfoResult(
-        value[0].toBigInt(),
-        value[1].toBigInt(),
-        value[2].toI32(),
-        value[3].toI32(),
-        value[4].toAddress()
-      )
-    );
-  }
-
-  isLiquidationLoss(_offerId: BigInt, _offerType: i32): boolean {
-    let result = super.call(
-      "isLiquidationLoss",
-      "isLiquidationLoss(uint256,uint8):(bool)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
-    );
-
-    return result[0].toBoolean();
-  }
-
-  try_isLiquidationLoss(
-    _offerId: BigInt,
-    _offerType: i32
-  ): ethereum.CallResult<boolean> {
-    let result = super.tryCall(
-      "isLiquidationLoss",
-      "isLiquidationLoss(uint256,uint8):(bool)",
-      [
-        ethereum.Value.fromUnsignedBigInt(_offerId),
-        ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(_offerType))
-      ]
-    );
-    if (result.reverted) {
-      return new ethereum.CallResult();
-    }
-    let value = result.value;
-    return ethereum.CallResult.fromValue(value[0].toBoolean());
+    return ethereum.CallResult.fromValue(value[0].toI32());
   }
 
   owner(): Address {
@@ -1898,15 +1720,15 @@ export class SpectrrFi extends ethereum.SmartContract {
   tokens(param0: i32): SpectrrFi__tokensResult {
     let result = super.call(
       "tokens",
-      "tokens(uint8):(uint8,uint8,string,address,address,address)",
+      "tokens(uint8):(string,uint8,uint8,uint8,address,address)",
       [ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(param0))]
     );
 
     return new SpectrrFi__tokensResult(
-      result[0].toI32(),
+      result[0].toString(),
       result[1].toI32(),
-      result[2].toString(),
-      result[3].toAddress(),
+      result[2].toI32(),
+      result[3].toI32(),
       result[4].toAddress(),
       result[5].toAddress()
     );
@@ -1915,7 +1737,7 @@ export class SpectrrFi extends ethereum.SmartContract {
   try_tokens(param0: i32): ethereum.CallResult<SpectrrFi__tokensResult> {
     let result = super.tryCall(
       "tokens",
-      "tokens(uint8):(uint8,uint8,string,address,address,address)",
+      "tokens(uint8):(string,uint8,uint8,uint8,address,address)",
       [ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(param0))]
     );
     if (result.reverted) {
@@ -1924,10 +1746,10 @@ export class SpectrrFi extends ethereum.SmartContract {
     let value = result.value;
     return ethereum.CallResult.fromValue(
       new SpectrrFi__tokensResult(
-        value[0].toI32(),
+        value[0].toString(),
         value[1].toI32(),
-        value[2].toString(),
-        value[3].toAddress(),
+        value[2].toI32(),
+        value[3].toI32(),
         value[4].toAddress(),
         value[5].toAddress()
       )
@@ -2126,8 +1948,12 @@ export class AddTokenCall__Inputs {
     return this._call.inputValues[2].value.toAddress();
   }
 
-  get _decimals(): i32 {
+  get _chainlinkOracleDecimals(): i32 {
     return this._call.inputValues[3].value.toI32();
+  }
+
+  get _decimals(): i32 {
+    return this._call.inputValues[4].value.toI32();
   }
 }
 
@@ -2356,7 +2182,7 @@ export class CreateBuyOfferCall__Inputs {
     this._call = call;
   }
 
-  get _buyingTokenAmountWei(): BigInt {
+  get _buyingTokenAmount(): BigInt {
     return this._call.inputValues[0].value.toBigInt();
   }
 
@@ -2364,7 +2190,7 @@ export class CreateBuyOfferCall__Inputs {
     return this._call.inputValues[1].value.toI32();
   }
 
-  get _exchangeRateWei(): BigInt {
+  get _exchangeRate(): BigInt {
     return this._call.inputValues[2].value.toBigInt();
   }
 
@@ -2410,7 +2236,7 @@ export class CreateSaleOfferCall__Inputs {
     this._call = call;
   }
 
-  get _sellingTokenAmountWei(): BigInt {
+  get _sellingTokenAmount(): BigInt {
     return this._call.inputValues[0].value.toBigInt();
   }
 
@@ -2418,7 +2244,7 @@ export class CreateSaleOfferCall__Inputs {
     return this._call.inputValues[1].value.toI32();
   }
 
-  get _exchangeRateWei(): BigInt {
+  get _exchangeRate(): BigInt {
     return this._call.inputValues[2].value.toBigInt();
   }
 

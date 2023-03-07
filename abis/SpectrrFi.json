@@ -1,7 +1,11 @@
 [
   {
     "inputs": [
-      { "internalType": "address", "name": "_feeAddress", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_feeAddress",
+        "type": "address"
+      }
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
@@ -58,12 +62,6 @@
         "internalType": "uint256",
         "name": "offerId",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
       }
     ],
     "name": "BuyOfferCanceled",
@@ -82,18 +80,6 @@
         "indexed": false,
         "internalType": "uint256",
         "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint8",
-        "name": "amountId",
-        "type": "uint8"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
         "type": "uint256"
       }
     ],
@@ -175,12 +161,6 @@
         "internalType": "uint256",
         "name": "offerId",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
       }
     ],
     "name": "BuyOfferForfeited",
@@ -200,12 +180,6 @@
         "internalType": "address",
         "name": "liquidator",
         "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
       }
     ],
     "name": "BuyOfferLiquidated",
@@ -237,12 +211,6 @@
         "internalType": "bool",
         "name": "byPart",
         "type": "bool"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
       }
     ],
     "name": "BuyOfferRepaid",
@@ -394,12 +362,6 @@
         "internalType": "uint256",
         "name": "offerId",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
       }
     ],
     "name": "SaleOfferCanceled",
@@ -418,18 +380,6 @@
         "indexed": false,
         "internalType": "uint256",
         "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amountId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
         "type": "uint256"
       }
     ],
@@ -505,12 +455,6 @@
         "internalType": "uint256",
         "name": "offerId",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
       }
     ],
     "name": "SaleOfferForfeited",
@@ -530,12 +474,6 @@
         "internalType": "address",
         "name": "liquidator",
         "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
       }
     ],
     "name": "SaleOfferLiquidated",
@@ -567,12 +505,6 @@
         "internalType": "bool",
         "name": "byPart",
         "type": "bool"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
       }
     ],
     "name": "SaleOfferRepaid",
@@ -600,34 +532,75 @@
   {
     "inputs": [],
     "name": "FEE_PERCENT",
-    "outputs": [{ "internalType": "uint16", "name": "", "type": "uint16" }],
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "MIN_RATIO_LIQUIDATION",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "RATIO_COLLATERAL_TO_DEBT",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "RATIO_LIQUIDATION_IS_LOSS",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "WEI",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "acceptBuyOffer",
     "outputs": [],
@@ -636,8 +609,16 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint8", "name": "_collateralTokenId", "type": "uint8" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_collateralTokenId",
+        "type": "uint8"
+      }
     ],
     "name": "acceptSaleOffer",
     "outputs": [],
@@ -646,8 +627,16 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint256", "name": "_amountToAdd", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amountToAdd",
+        "type": "uint256"
+      }
     ],
     "name": "addCollateralBuyOffer",
     "outputs": [],
@@ -656,8 +645,16 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint256", "name": "_amountToAdd", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amountToAdd",
+        "type": "uint256"
+      }
     ],
     "name": "addCollateralSaleOffer",
     "outputs": [],
@@ -666,14 +663,31 @@
   },
   {
     "inputs": [
-      { "internalType": "string", "name": "_tokenName", "type": "string" },
-      { "internalType": "address", "name": "_tokenAddress", "type": "address" },
+      {
+        "internalType": "string",
+        "name": "_tokenName",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_tokenAddress",
+        "type": "address"
+      },
       {
         "internalType": "address",
         "name": "_chainlinkOracleAddress",
         "type": "address"
       },
-      { "internalType": "uint8", "name": "_decimals", "type": "uint8" }
+      {
+        "internalType": "uint8",
+        "name": "_chainlinkOracleDecimals",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_decimals",
+        "type": "uint8"
+      }
     ],
     "name": "addToken",
     "outputs": [],
@@ -681,7 +695,61 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_amountTokenId",
+        "type": "uint8"
+      }
+    ],
+    "name": "amountFromWei",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_amountTokenId",
+        "type": "uint8"
+      }
+    ],
+    "name": "amountToWei",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "buyOffers",
     "outputs": [
       {
@@ -694,21 +762,61 @@
         "name": "offerLockState",
         "type": "uint8"
       },
-      { "internalType": "uint256", "name": "offerId", "type": "uint256" },
-      { "internalType": "uint256", "name": "buying", "type": "uint256" },
-      { "internalType": "uint256", "name": "buyingFor", "type": "uint256" },
-      { "internalType": "uint256", "name": "collateral", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "buying",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "buyingFor",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "collateral",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "repayInSeconds",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "timeAccepted", "type": "uint256" },
-      { "internalType": "uint8", "name": "buyingId", "type": "uint8" },
-      { "internalType": "uint8", "name": "buyingForId", "type": "uint8" },
-      { "internalType": "uint8", "name": "collateralId", "type": "uint8" },
-      { "internalType": "address", "name": "buyer", "type": "address" },
-      { "internalType": "address", "name": "seller", "type": "address" }
+      {
+        "internalType": "uint256",
+        "name": "timeAccepted",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "buyingId",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "buyingForId",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "collateralId",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "buyer",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "seller",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -716,17 +824,13 @@
   {
     "inputs": [],
     "name": "buyOffersCount",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint8", "name": "_offerType", "type": "uint8" }
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    "name": "canLiquidate",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -737,7 +841,11 @@
         "name": "_amountTokenWei",
         "type": "uint256"
       },
-      { "internalType": "uint8", "name": "_amountTokenId", "type": "uint8" },
+      {
+        "internalType": "uint8",
+        "name": "_amountTokenId",
+        "type": "uint8"
+      },
       {
         "internalType": "uint256",
         "name": "_collateralTokenAmountWei",
@@ -755,13 +863,23 @@
       }
     ],
     "name": "canLiquidate",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_timeAccepted", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_timeAccepted",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "_repayInSeconds",
@@ -769,13 +887,23 @@
       }
     ],
     "name": "canLiquidateTimeOver",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "cancelBuyOffer",
     "outputs": [],
@@ -784,7 +912,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "cancelSaleOffer",
     "outputs": [],
@@ -793,9 +925,21 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "address", "name": "_newAddress", "type": "address" },
-      { "internalType": "uint8", "name": "_addressType", "type": "uint8" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_newAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_addressType",
+        "type": "uint8"
+      }
     ],
     "name": "changeAddressBuy",
     "outputs": [],
@@ -804,9 +948,21 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "address", "name": "_newAddress", "type": "address" },
-      { "internalType": "uint8", "name": "_addressType", "type": "uint8" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_newAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_addressType",
+        "type": "uint8"
+      }
     ],
     "name": "changeAddressSale",
     "outputs": [],
@@ -815,7 +971,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint8", "name": "_tokenId", "type": "uint8" },
+      {
+        "internalType": "uint8",
+        "name": "_tokenId",
+        "type": "uint8"
+      },
       {
         "internalType": "address",
         "name": "_newChainlinkOracleAddress",
@@ -829,7 +989,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_newFeeAddress", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_newFeeAddress",
+        "type": "address"
+      }
     ],
     "name": "changeFeeAddress",
     "outputs": [],
@@ -840,16 +1004,24 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_buyingTokenAmountWei",
+        "name": "_buyingTokenAmount",
         "type": "uint256"
       },
-      { "internalType": "uint8", "name": "_buyingTokenId", "type": "uint8" },
+      {
+        "internalType": "uint8",
+        "name": "_buyingTokenId",
+        "type": "uint8"
+      },
       {
         "internalType": "uint256",
-        "name": "_exchangeRateWei",
+        "name": "_exchangeRate",
         "type": "uint256"
       },
-      { "internalType": "uint8", "name": "_buyingForTokenId", "type": "uint8" },
+      {
+        "internalType": "uint8",
+        "name": "_buyingForTokenId",
+        "type": "uint8"
+      },
       {
         "internalType": "uint8",
         "name": "_collateralTokenId",
@@ -862,7 +1034,13 @@
       }
     ],
     "name": "createBuyOffer",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -870,13 +1048,17 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_sellingTokenAmountWei",
+        "name": "_sellingTokenAmount",
         "type": "uint256"
       },
-      { "internalType": "uint8", "name": "_sellingTokenId", "type": "uint8" },
+      {
+        "internalType": "uint8",
+        "name": "_sellingTokenId",
+        "type": "uint8"
+      },
       {
         "internalType": "uint256",
-        "name": "_exchangeRateWei",
+        "name": "_exchangeRate",
         "type": "uint256"
       },
       {
@@ -891,20 +1073,36 @@
       }
     ],
     "name": "createSaleOffer",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "feeAddress",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "forfeitBuyOffer",
     "outputs": [],
@@ -913,7 +1111,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "forfeitSaleOffer",
     "outputs": [],
@@ -923,7 +1125,13 @@
   {
     "inputs": [],
     "name": "getBlockTimestamp",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -936,7 +1144,13 @@
       }
     ],
     "name": "getChainlinkPrice",
-    "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }],
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -947,7 +1161,11 @@
         "name": "_amountTokenWei",
         "type": "uint256"
       },
-      { "internalType": "uint8", "name": "_amountTokenId", "type": "uint8" },
+      {
+        "internalType": "uint8",
+        "name": "_amountTokenId",
+        "type": "uint8"
+      },
       {
         "internalType": "uint8",
         "name": "_collateralTokenId",
@@ -960,17 +1178,31 @@
       }
     ],
     "name": "getCollateral",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint8", "name": "_tokenId", "type": "uint8" }
+      {
+        "internalType": "uint8",
+        "name": "_tokenId",
+        "type": "uint8"
+      }
     ],
     "name": "getITokenFromId",
     "outputs": [
-      { "internalType": "contract IERC20", "name": "", "type": "address" }
+      {
+        "internalType": "contract IERC20",
+        "name": "",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -999,27 +1231,13 @@
       }
     ],
     "name": "getLiquidationPriceAmountFor",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint8", "name": "_offerType", "type": "uint8" }
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    "name": "getLiquidationPriceAmountFor",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint8", "name": "_offerType", "type": "uint8" }
-    ],
-    "name": "getLiquidationPriceCollateral",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -1035,7 +1253,11 @@
         "name": "_amountForTokenWei",
         "type": "uint256"
       },
-      { "internalType": "uint8", "name": "_amountForTokenId", "type": "uint8" },
+      {
+        "internalType": "uint8",
+        "name": "_amountForTokenId",
+        "type": "uint8"
+      },
       {
         "internalType": "uint256",
         "name": "_liquidationLimit",
@@ -1043,7 +1265,13 @@
       }
     ],
     "name": "getLiquidationPriceCollateral",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -1059,43 +1287,54 @@
         "name": "_collateralTokenAmountWei",
         "type": "uint256"
       },
-      { "internalType": "uint8", "name": "_amountTokenId", "type": "uint8" },
-      { "internalType": "uint8", "name": "_collateralTokenId", "type": "uint8" }
+      {
+        "internalType": "uint8",
+        "name": "_amountTokenId",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_collateralTokenId",
+        "type": "uint8"
+      }
     ],
     "name": "getRatio",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint8", "name": "_offerType", "type": "uint8" }
-    ],
-    "name": "getRatioInfo",
     "outputs": [
-      { "internalType": "uint256", "name": "", "type": "uint256" },
-      { "internalType": "uint256", "name": "", "type": "uint256" },
-      { "internalType": "uint8", "name": "", "type": "uint8" },
-      { "internalType": "uint8", "name": "", "type": "uint8" },
-      { "internalType": "address", "name": "", "type": "address" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint8", "name": "_offerType", "type": "uint8" }
+      {
+        "internalType": "uint8",
+        "name": "_tokenId",
+        "type": "uint8"
+      }
     ],
-    "name": "isLiquidationLoss",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "name": "getTokenDecimalsFromId",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "liquidateBuyOffer",
     "outputs": [],
@@ -1104,7 +1343,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "liquidateSaleOffer",
     "outputs": [],
@@ -1114,7 +1357,13 @@
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -1127,7 +1376,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "repayBuyOffer",
     "outputs": [],
@@ -1136,8 +1389,16 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint256", "name": "_amountToRepay", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amountToRepay",
+        "type": "uint256"
+      }
     ],
     "name": "repayBuyOfferPart",
     "outputs": [],
@@ -1146,7 +1407,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      }
     ],
     "name": "repaySaleOffer",
     "outputs": [],
@@ -1155,8 +1420,16 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_offerId", "type": "uint256" },
-      { "internalType": "uint256", "name": "_amountToRepay", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amountToRepay",
+        "type": "uint256"
+      }
     ],
     "name": "repaySaleOfferPart",
     "outputs": [],
@@ -1164,7 +1437,13 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "saleOffers",
     "outputs": [
       {
@@ -1177,21 +1456,61 @@
         "name": "offerLockState",
         "type": "uint8"
       },
-      { "internalType": "uint256", "name": "offerId", "type": "uint256" },
-      { "internalType": "uint256", "name": "selling", "type": "uint256" },
-      { "internalType": "uint256", "name": "sellingFor", "type": "uint256" },
-      { "internalType": "uint256", "name": "collateral", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "offerId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "selling",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sellingFor",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "collateral",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "repayInSeconds",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "timeAccepted", "type": "uint256" },
-      { "internalType": "uint8", "name": "sellingId", "type": "uint8" },
-      { "internalType": "uint8", "name": "sellingForId", "type": "uint8" },
-      { "internalType": "uint8", "name": "collateralId", "type": "uint8" },
-      { "internalType": "address", "name": "seller", "type": "address" },
-      { "internalType": "address", "name": "buyer", "type": "address" }
+      {
+        "internalType": "uint256",
+        "name": "timeAccepted",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "sellingId",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "sellingForId",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "collateralId",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "seller",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "buyer",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -1199,47 +1518,99 @@
   {
     "inputs": [],
     "name": "saleOffersCount",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "tokenCount",
-    "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }],
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint8", "name": "_tokenId", "type": "uint8" }
+      {
+        "internalType": "uint8",
+        "name": "_tokenId",
+        "type": "uint8"
+      }
     ],
     "name": "tokenIdToPrice",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }],
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
     "name": "tokens",
     "outputs": [
-      { "internalType": "uint8", "name": "tokenId", "type": "uint8" },
-      { "internalType": "uint8", "name": "decimals", "type": "uint8" },
-      { "internalType": "string", "name": "tokenName", "type": "string" },
-      { "internalType": "address", "name": "tokenAddress", "type": "address" },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "uint8",
+        "name": "id",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "decimals",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "chainlinkPriceDecimals",
+        "type": "uint8"
+      },
       {
         "internalType": "address",
         "name": "chainlinkOracleAddress",
         "type": "address"
       },
-      { "internalType": "contract IERC20", "name": "Itoken", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "newOwner", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
     ],
     "name": "transferOwnership",
     "outputs": [],

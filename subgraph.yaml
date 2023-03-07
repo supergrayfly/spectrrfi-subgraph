@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: SpectrrFi
-    network: fantom-testnet
+    network: fantom
     source:
       abi: SpectrrFi
-      address: "0x31906d7be658cf29835b37cf09d996fd5bfe0fd1"
-      startBlock: 14284993
+      address: "0x05FD70BA0530C9514bD8ee07bb1Af81217C7E788"
+      startBlock: 57063757
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -40,17 +40,17 @@ dataSources:
           handler: handleBuyOfferAccepted
         - event: BuyOfferBuyerAddressChanged(uint256,address)
           handler: handleBuyOfferBuyerAddressChanged
-        - event: BuyOfferCanceled(uint256,uint256)
+        - event: BuyOfferCanceled(uint256)
           handler: handleBuyOfferCanceled
-        - event: BuyOfferCollateralAdded(uint256,uint256,uint8,uint256)
+        - event: BuyOfferCollateralAdded(uint256,uint256)
           handler: handleBuyOfferCollateralAdded
         - event: BuyOfferCreated(uint256,uint256,uint8,uint256,uint8,uint256,uint8,uint256,address,uint256)
           handler: handleBuyOfferCreated
-        - event: BuyOfferForfeited(uint256,uint256)
+        - event: BuyOfferForfeited(uint256)
           handler: handleBuyOfferForfeited
-        - event: BuyOfferLiquidated(uint256,address,uint256)
+        - event: BuyOfferLiquidated(uint256,address)
           handler: handleBuyOfferLiquidated
-        - event: BuyOfferRepaid(uint256,uint256,uint8,bool,uint256)
+        - event: BuyOfferRepaid(uint256,uint256,uint8,bool)
           handler: handleBuyOfferRepaid
         - event: BuyOfferSellerAddressChanged(uint256,address)
           handler: handleBuyOfferSellerAddressChanged
@@ -58,17 +58,17 @@ dataSources:
           handler: handleSaleOfferAccepted
         - event: SaleOfferBuyerAddressChanged(uint256,address)
           handler: handleSaleOfferBuyerAddressChanged
-        - event: SaleOfferCanceled(uint256,uint256)
+        - event: SaleOfferCanceled(uint256)
           handler: handleSaleOfferCanceled
-        - event: SaleOfferCollateralAdded(uint256,uint256,uint256,uint256)
+        - event: SaleOfferCollateralAdded(uint256,uint256)
           handler: handleSaleOfferCollateralAdded
         - event: SaleOfferCreated(uint256,uint256,uint8,uint256,uint8,uint256,uint256,address,uint256)
           handler: handleSaleOfferCreated
-        - event: SaleOfferForfeited(uint256,uint256)
+        - event: SaleOfferForfeited(uint256)
           handler: handleSaleOfferForfeited
-        - event: SaleOfferLiquidated(uint256,address,uint256)
+        - event: SaleOfferLiquidated(uint256,address)
           handler: handleSaleOfferLiquidated
-        - event: SaleOfferRepaid(uint256,uint256,uint8,bool,uint256)
+        - event: SaleOfferRepaid(uint256,uint256,uint8,bool)
           handler: handleSaleOfferRepaid
         - event: SaleOfferSellerAddressChanged(uint256,address)
           handler: handleSaleOfferSellerAddressChanged
